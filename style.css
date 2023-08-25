@@ -1,0 +1,38 @@
+*{
+    
+}
+.sc1{
+    height: 20%;
+}
+.sc1 .date{
+    font-size: 1.5em;
+    line-height: 2em;
+    font-family: Cormorant Unicase,serif;
+    line-height: 1;
+    letter-spacing: 0.05em;
+}
+.sc1 .name{
+    font-size: 1.125em;
+    line-height: 1;
+}
+.sc1 .location{
+    font-weight: 200;
+    font-size: 0.625em;
+    line-height: 0.75em;
+    line-height: 1;
+    color: #06080Faa;
+}
+
+
+
+
+/* 스크롤 떠오르는 애니메이션 */
+.fade-0{
+    opacity:0;
+    transform:translate3d(0, 7em, 0);
+}
+.fade-up{
+    opacity: 1; 
+    transform: translate3d(0px, 0px, 0px); 
+    transition: all 1s cubic-bezier(0, 0, 0.2, 1) 0s;
+}
