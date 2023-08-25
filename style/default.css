@@ -54,11 +54,27 @@ body::-webkit-scrollbar{
     display: none;
 }
 /* ======================================================================== */
-.vertical-line{
+.line-vertical-thin-light{
     width: 1px;
     border: 1px solid #000;
     transform: scaleX(0.5);
     opacity: .2;
     height: 64px;
     margin: 64px auto;
+}
+.line-s-thin{
+    width: 20px;
+    border: 1px solid #000;
+    transform: scaleY(0.5);
+    /* opacity: .2; */
+    height: 1px;
+    margin: 5px auto;
+}
+.line-calendar{
+    width: 100%;
+    border: 1px solid #000;
+    transform: scaleY(0.3);
+    opacity: .1;
+    height: 1px;
+    margin: 5px auto;
 }

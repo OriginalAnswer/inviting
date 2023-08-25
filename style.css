@@ -5,7 +5,8 @@
     
     --c-music-btn:#06080Faa;
     --c-music-btn-light:#0000002c;
-
+    
+    --bgc-music-btn:rgba(255, 255, 255, 0.2);
     --bgc-screen:#ffffff;
     --bgc-calendar:rgba(245,245,245,1);
 
@@ -100,8 +101,11 @@ section{
 .sc2{
     padding: 64px 32px;
 }
+.sc2 p {
+    line-height: 1.9em;
+}
 .sc2 .title{
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 .sc2 .text{
     font-size: .9em;
@@ -113,6 +117,7 @@ section{
     justify-content: center;
     align-items: center;
     font-size: 1em;
+    padding-bottom: 5px;
 }
 .family .dot{
     padding: 0 .5em;
@@ -133,9 +138,66 @@ section{
 .sc3{
     background-color: var(--bgc-calendar);
     height: 503px;
+    padding: 3.5em 35px;
 
     border-top: 1px var(--c-music-btn-light);
     border-bottom: 1px var(--c-music-btn-light);
+    line-height: 1.75em;
+}
+.sc3 .title{
+    font-size: 1.25em;
+    padding-top: 5px;
+}
+.calendar{
+    width: 100%;
+    margin-top: 30px;
+}
+.calendar div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.calendar .day,
+.calendar .date{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+}
+.calendar .x{
+    color:#929292;
+}
+.sunday,
+.r{
+    color: red;
+}
+.calendar .icon{
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    fill: rgb(159, 159, 159);
+    stroke: rgb(159, 159, 159);
+}
+.calendar .d{
+    position: relative;
+    z-index: 10;
+    /* width: 45px;
+    height: 45px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+}
+.fulldate{
+    padding-top: 2em;
+    font-size: 1em;
+    line-height: 1.5em;
 }
 /* ===============sc=============== */
 /* ===============sc=============== */
