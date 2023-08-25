@@ -26,7 +26,7 @@ button:hover{
 }
 img, video {
     max-width: 100%;
-    height: auto;
+    /* height: auto; */
 }
 /* ======================================================================== */
 html, body {
@@ -48,7 +48,7 @@ body{
     touch-action: pan-y;
     min-height: 100vh;
     min-height: -webkit-fill-available;
-    background: #000;
+    background: #2f2f2f;
 }
 body::-webkit-scrollbar{
     display: none;
@@ -57,7 +57,7 @@ body::-webkit-scrollbar{
 .line-vertical-thin-light{
     width: 1px;
     border: 1px solid #000;
-    transform: scaleX(0.5);
+    transform: scaleX(0.4);
     opacity: .2;
     height: 64px;
     margin: 64px auto;
@@ -73,8 +73,16 @@ body::-webkit-scrollbar{
 .line-calendar{
     width: 100%;
     border: 1px solid #000;
-    transform: scaleY(0.3);
-    opacity: .1;
+    transform: scaleY(0.2);
+    opacity: .2;
+    height: 1px;
+    margin: 5px auto;
+}
+.line-calendar-dot{
+    width: 100%;
+    border: 1px dotted #000;
+    transform: scaleY(0.2);
+    opacity: .2;
     height: 1px;
     margin: 5px auto;
 }
