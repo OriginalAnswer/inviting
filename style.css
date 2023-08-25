@@ -68,7 +68,7 @@ section{
 /* ===============sc1=============== */
 .sc1{
     height: 20%;
-    padding-top: 2.5em;
+    padding-top:3em;
     /* padding-bottom: 40px; */
 }
 /* .sc1 div:not(:nth-child(3)){
@@ -84,6 +84,7 @@ section{
 }
 .sc1 .name{
     margin-bottom: 1em;
+    padding: 8px;
     font-size: 1.2em;
     line-height: 1;
 }
