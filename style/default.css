@@ -70,6 +70,14 @@ body::-webkit-scrollbar{
     height: 1px;
     margin: 5px auto;
 }
+.line-s-thin-2{
+    width: 50px;
+    border: 1px solid #000;
+    transform: scaleY(0.5);
+    opacity: .2;
+    height: 1px;
+    margin: 5px auto;
+}
 .line-calendar{
     width: 100%;
     border: 1px solid #000;
