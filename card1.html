@@ -24,7 +24,7 @@
             <div class="date">11 | 04</div>
             <div class="name">정지훈 & 김태희</div>
             <div class="location">광명무역센터컨벤션 3층 그랜드볼룸</div>
-            <img class="img-main" src="./img/main.jpg" alt="메인사진">
+            <img class="img-main" src="./img/main.png" alt="메인사진">
         </section>
         <section class="sc2">
             <div class="title fade-0">
@@ -138,6 +138,7 @@
             </div>
             <div class="fade-0 g">
                 <div class="container">
+                    <div class="inner"><img src="./img/main.png"></div>
                     <div class="inner"><img src="./img/1.jpg"></div>
                     <div class="inner"><img src="./img/2.jpg"></div>
                     <div class="inner"><img src="./img/3.jpg"></div>
@@ -151,16 +152,17 @@
                 </div>
 
                 <nav class="slider-nav">
-                    <div class="slider-dot" onclick="slider()" data-page="1"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="2"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="3"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="4"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="5"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="6"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="7"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="8"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="9"></div>
-                    <div class="slider-dot" onclick="slider()" data-page="10"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="0"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="1"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="2"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="3"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="4"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="5"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="6"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="7"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="8"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="9"></div>
+                    <div class="slider-dot" onclick="slider()" data-g-index="10"></div>
                 </nav>
             </div>
         </section>
@@ -220,14 +222,18 @@
         <section class="sc8 fade-0"></section>
     </div>
     <script>
+        const music = document.querySelector('audio');
+        console.log(music);
+        // music.play();
+        music.volume = .7;
+        console.log(music);
+
         function slider(){
             const n = event.target.dataset.page;
-            console.log(n);
         }
 
         const observer = new IntersectionObserver((arr) => {
             arr.forEach((e) => {
-                console.log(e);
                 if(e.isIntersecting){
                     e.target.classList.add('fade-up');
                 }
