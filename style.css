@@ -225,7 +225,7 @@ section{
     line-height: 1.5em;
 }
 /* ===============sc4=============== */
-.sc4{height: 100vh;}
+.sc4{height:auto;}
 .sc4 .sc-head{height: 20%;}
            .g{height: 80%;}
                 .gcontainer{height: auto;}
@@ -285,7 +285,7 @@ section{
 /* ===============sc5=============== */
 .sc-head{
     margin-top: 8em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 /* ===== */
 .howcome{
