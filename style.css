@@ -5,9 +5,11 @@
     --sc-border: 1px solid rgba(229,229,229,1);
     
     --c-music-btn:#06080Faa;
+    --c-music-btn-hover:#06080f;
     --c-music-btn-light:#0000002c;
     
     --bgc-music-btn:rgba(255, 255, 255, 0.747);
+    --bgc-music-btn-hover:rgba(223, 223, 223, 0.898);
     --bgc-screen:#ffffff;
     --bgc-calendar:rgba(240,240,240,1);
     --bgc-s-dot-default:#dddddd;
@@ -66,6 +68,11 @@ section{
     line-height: 1rem;
     color: var(--c-music-btn);
     font-size: 0.7rem;
+    color: var(--c-music-btn);
+}
+.music-btn:hover{
+    background-color: var(--bgc-music-btn-hover);
+    color: var(--c-music-btn-hover);
 }
 /* ===============sc1=============== */
 .sc1{
