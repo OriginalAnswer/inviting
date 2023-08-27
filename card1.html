@@ -2,7 +2,7 @@
 <html lang="kr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width" />
     <link rel="stylesheet" href="style.css">
     <meta content="정지훈👩‍❤️‍👨김태희 결혼식에 초대합니다" property="og:title">
     <meta content="23년11월4일 2시30분 광명무역센터컨벤션" property="og:description">
@@ -16,7 +16,10 @@
                 <!-- <i class="fa-solid fa-volume-xmark"></i> -->
             </button>
         </div>
-        <audio src="/music/"></audio>
+        <audio loop preload="metadata" src="./music/precious-memories.mp3"
+                title="/music/precious-memories.mp3">
+            <p>Your browser does not support the <code>audio</code> element.</p>
+        </audio>
         <section class="sc1">
             <div class="date">11 | 04</div>
             <div class="name">정지훈 & 김태희</div>
@@ -34,9 +37,11 @@
                 <p>그 설렘의 순간에</p>
                 <p>소중한 분을 초대합니다.</p>
             </div>
-            <div class="line-vertical-thin-light fade-0"></div>
-            <div class="info">
-                <div class="family male">
+            <div class="fade-0">
+                <div class="line-vertical-thin-light"></div>
+            </div>
+            <div class="info fade-0">
+                <div class="family male fade-0">
                     <div class="name">정길동</div>
                     <div class="dot">·</div>
                     <div class="name">김선아</div>
@@ -44,7 +49,7 @@
                     <div class="who">아들</div>
                     <div class="name">정지훈</div>
                 </div>
-                <div class="family female">
+                <div class="family female fade-0">
                     <div class="name">김길동</div>
                     <div class="dot">·</div>
                     <div class="name">박선아</div>
@@ -69,7 +74,9 @@
                     <div class="day">금</div>
                     <div class="day">토</div>
                 </div>
-                <div class="line-calendar-dot"></div>
+                <div class="fade-0">
+                    <div class="line-calendar-dot"></div>
+                </div>
                 <div class="fade-0">
                     <div class="date x">29</div>
                     <div class="date x">30</div>
@@ -118,7 +125,9 @@
                     <div class="date x">1</div>
                     <div class="date x">2</div>
                 </div>
-                <div class="line-calendar"></div>
+                <div class="fade-0">
+                    <div class="line-calendar"></div>
+                </div>
             </div>
             <div class="fulldate fade-0">2023년 11월 4일 토요일 오후 2시 30분</div>
         </section>
@@ -129,29 +138,29 @@
             </div>
             <div class="fade-0 g">
                 <div class="container">
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
-                    <div class="inner"><img src="./img/main.jpg"></div>
+                    <div class="inner"><img src="./img/1.jpg"></div>
+                    <div class="inner"><img src="./img/2.jpg"></div>
+                    <div class="inner"><img src="./img/3.jpg"></div>
+                    <div class="inner"><img src="./img/4.jpg"></div>
+                    <div class="inner"><img src="./img/5.jpg"></div>
+                    <div class="inner"><img src="./img/6.jpg"></div>
+                    <div class="inner"><img src="./img/7.jpg"></div>
+                    <div class="inner"><img src="./img/8.jpg"></div>
+                    <div class="inner"><img src="./img/9.jpg"></div>
+                    <div class="inner"><img src="./img/10.jpg"></div>
                 </div>
 
                 <nav class="slider-nav">
-                    <div class="slider-dot" data-g-page="1"></div>
-                    <div class="slider-dot" data-g-page="2"></div>
-                    <div class="slider-dot" data-g-page="3"></div>
-                    <div class="slider-dot" data-g-page="4"></div>
-                    <div class="slider-dot" data-g-page="5"></div>
-                    <div class="slider-dot" data-g-page="6"></div>
-                    <div class="slider-dot" data-g-page="7"></div>
-                    <div class="slider-dot" data-g-page="8"></div>
-                    <div class="slider-dot" data-g-page="9"></div>
-                    <div class="slider-dot" data-g-page="10"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="1"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="2"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="3"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="4"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="5"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="6"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="7"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="8"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="9"></div>
+                    <div class="slider-dot" onclick="slider()" data-page="10"></div>
                 </nav>
             </div>
         </section>
@@ -166,7 +175,11 @@
                     <div class="fade-0">경기 광명시 일직로 72</div>
                     <div class="fade-0">광명무역센터컨벤션 3층</div>
                 </div>
-                <div class="line-s-thin-2"></div>
+
+                <div class="fade-0">
+                    <div class="line-s-thin-2"></div>
+                </div>
+
                 <div class="detail">
 <div class="fade-0 subway">
 <div class="title">지하철</div>
@@ -206,6 +219,24 @@
         <section class="sc7 fade-0"></section>
         <section class="sc8 fade-0"></section>
     </div>
+    <script>
+        function slider(){
+            const n = event.target.dataset.page;
+            console.log(n);
+        }
+
+        const observer = new IntersectionObserver((arr) => {
+            arr.forEach((e) => {
+                console.log(e);
+                if(e.isIntersecting){
+                    e.target.classList.add('fade-up');
+                }
+            })
+        })
+        const fadeElements = document.querySelectorAll('.fade-0');
+        fadeElements.forEach((e) => observer.observe(e));
+
+    </script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
 </html>

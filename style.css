@@ -7,7 +7,7 @@
     --c-music-btn:#06080Faa;
     --c-music-btn-light:#0000002c;
     
-    --bgc-music-btn:rgba(255, 255, 255, 0.704);
+    --bgc-music-btn:rgba(255, 255, 255, 0.747);
     --bgc-screen:#ffffff;
     --bgc-calendar:rgba(240,240,240,1);
     --bgc-s-dot-default:#dddddd;
@@ -31,11 +31,7 @@
     overflow-y: scroll;
     background-size: contain;
 }
-@media (min-width: 640px){
-    .screen{
-        max-width: 24rem;
-    }
-}
+
 section{
     /* border: 1px solid #000; */
     text-align: center;
@@ -52,6 +48,8 @@ section{
     align-items: center;
     justify-content: end;
     padding: 10px;
+
+    z-index: 10;
     
 }
 .music-btn{
@@ -62,7 +60,7 @@ section{
     
     border: 1px solid var(--c-music-btn-light);
     border-radius: 0.5rem;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: var(--bgc-music-btn);
     
     line-height: 1rem;
     color: var(--c-music-btn);
@@ -114,11 +112,16 @@ section{
     line-height: 1.9em;
 }
 .sc2 .title{
-    font-size: 1.3em;
+    padding-top: 2em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-size: 1.25em;
+    line-height: 1.75em;
+    /* font-size: 1.3em; */
 }
 .sc2 .text{
     font-size: .9em;
-    padding-top: 64px;
+    padding-top: 60px;
 }
 .sc2 .family{
     width: 100%;
@@ -215,19 +218,49 @@ section{
 }
 /* ===============sc4=============== */
 .g{
-    overflow: scroll;
+    overflow: hidden;
+    display: block;
+    width: 100%;
 }
 .g .container{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-wrap: nowrap;
+    
+    
     width: 100%;
-    overflow-x: scroll;
+    height: calc(100vh - 100px);
+    position: relative;
+    overflow: scroll;
+
+    border: 1px solid #000;
+}
+.g .containerc::-webkit-scrollbar{
+    display: none;
 }
 .g .inner{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-shrink: 0;
+
+    place-items: center;
+    align-content: center;
+    
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    cursor: pointer;
+    
+    border: 1px solid #000;
 }
 .g img{
     width: 100%;
+    flex-shrink: 0;
+    /* margin: auto; */
+    /* object-fit: cover; */
 }
+
 .slider-nav{
     display: flex;
     flex-direction: row;
@@ -293,8 +326,27 @@ section{
     opacity:0;
     transform:translate3d(0, 7em, 0);
 } */
+
+.fade-0{
+    opacity: 0; 
+    transform: translate3d(0em, 7em, 7em); 
+    transition: all 1s cubic-bezier(0, 0, 0.2, 1)  0s;
+}
+
 .fade-up{
     opacity: 1; 
-    transform: translate3d(0px, 0px, 0px); 
+    transform: translate3d(0em, 0em, 0em); 
     transition: all 1s cubic-bezier(0, 0, 0.2, 1) 0s;
+}
+
+
+
+/* pc */
+@media (min-width: 640px){
+    .screen{
+        max-width: 24rem;
+    }
+    .g .container{
+        height: calc(100vh - 170px);
+    }
 }
