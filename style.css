@@ -74,6 +74,11 @@ section{
     background-color: var(--bgc-music-btn-hover);
     color: var(--c-music-btn-hover);
 }
+/*  */
+.sc-head{
+    margin-top: 8em;
+    margin-bottom: 2em;
+}
 /* ===============sc1=============== */
 .sc1{
     height: 20%;
@@ -283,9 +288,15 @@ section{
     background-color: var(--bgc-s-dot-hover);
 }
 /* ===============sc5=============== */
-.sc-head{
-    margin-top: 8em;
-    margin-bottom: 4em;
+.map{
+    border: 1px solid #000;
+}
+.sc5 .head div{
+    font-size: .9em;
+}
+.sc5 .head div:last-child{
+    font-size: 1.2em;
+    padding-top: 5px;
 }
 /* ===== */
 .howcome{
