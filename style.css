@@ -7,9 +7,12 @@
     --c-music-btn:#06080Faa;
     --c-music-btn-light:#0000002c;
     
-    --bgc-music-btn:rgba(255, 255, 255, 0.2);
+    --bgc-music-btn:rgba(255, 255, 255, 0.704);
     --bgc-screen:#ffffff;
     --bgc-calendar:rgba(240,240,240,1);
+    --bgc-s-dot-default:#dddddd;
+    --bgc-s-dot-focus:#202020;
+    
 
     --mb-sc:1em;
 }
@@ -211,6 +214,42 @@ section{
     line-height: 1.5em;
 }
 /* ===============sc4=============== */
+.g{
+    overflow: scroll;
+}
+.g .container{
+    width: 100%;
+    overflow-x: scroll;
+}
+.g .inner{
+    width: 100%;
+    height: 100vh;
+}
+.g img{
+    width: 100%;
+}
+.slider-nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    gap: 6px;
+
+    /* position: unset; */
+    width: 100%!important;
+    padding: 0.25rem 0.75rem;
+    line-height: 1.25rem;
+}
+.slider-dot{
+    width: .5em;
+    height: .5em;
+    background-color: var(--bgc-s-dot-default);
+
+    border-radius: 50px;
+    cursor: pointer;
+}
+/* ===============sc5=============== */
 .sc-head{
     margin-bottom: 4em;
 }
@@ -242,7 +281,6 @@ section{
     padding-bottom: 0.75em;
 
 }
-/* ===============sc=============== */
 /* ===============sc=============== */
 /* ===============sc=============== */
 /* ===============sc=============== */
