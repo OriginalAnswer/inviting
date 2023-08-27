@@ -137,32 +137,42 @@
                 <div class="line-s-thin"></div>
             </div>
             <div class="fade-0 g">
-                <div class="container">
-                    <div class="inner"><img src="./img/main.png"></div>
-                    <div class="inner"><img src="./img/1.jpg"></div>
-                    <div class="inner"><img src="./img/2.jpg"></div>
-                    <div class="inner"><img src="./img/3.jpg"></div>
-                    <div class="inner"><img src="./img/4.jpg"></div>
-                    <div class="inner"><img src="./img/5.jpg"></div>
-                    <div class="inner"><img src="./img/6.jpg"></div>
-                    <div class="inner"><img src="./img/7.jpg"></div>
-                    <div class="inner"><img src="./img/8.jpg"></div>
-                    <div class="inner"><img src="./img/9.jpg"></div>
-                    <div class="inner"><img src="./img/10.jpg"></div>
+                <div class="gcontainer">
+                    <img class="inner" id="0" src="./img/main.png">
+                    <img class="inner" id="1" src="./img/1.jpg">
+                    <img class="inner" id="2" src="./img/2.jpg">
+                    <img class="inner" id="3" src="./img/3.jpg">
+                    <img class="inner" id="4" src="./img/4.jpg">
+                    <img class="inner" id="5" src="./img/5.jpg">
+                    <img class="inner" id="6" src="./img/6.jpg">
+                    <img class="inner" id="7" src="./img/7.jpg">
+                    <img class="inner" id="8" src="./img/8.jpg">
+                    <img class="inner" id="9" src="./img/9.jpg">
+                    <img class="inner" id="10" src="./img/10.jpg">
                 </div>
-
                 <nav class="slider-nav">
-                    <div class="slider-dot" onclick="slider()" data-g-index="0"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="1"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="2"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="3"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="4"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="5"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="6"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="7"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="8"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="9"></div>
-                    <div class="slider-dot" onclick="slider()" data-g-index="10"></div>
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="0" id="g-0">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="1" id="g-1">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="2" id="g-2">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="3" id="g-3">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="4" id="g-4">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="5" id="g-5">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="6" id="g-6">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="7" id="g-7">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="8" id="g-8">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="9" id="g-9">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="10" id="g-10">
+                    <label class="slider-dot"  for="g-0"></label>
+                    <label class="slider-dot"  for="g-1"></label>
+                    <label class="slider-dot"  for="g-2"></label>
+                    <label class="slider-dot"  for="g-3"></label>
+                    <label class="slider-dot"  for="g-4"></label>
+                    <label class="slider-dot"  for="g-5"></label>
+                    <label class="slider-dot"  for="g-6"></label>
+                    <label class="slider-dot"  for="g-7"></label>
+                    <label class="slider-dot"  for="g-8"></label>
+                    <label class="slider-dot"  for="g-9"></label>
+                    <label class="slider-dot"  for="g-10"></label>
                 </nav>
             </div>
         </section>
@@ -228,8 +238,15 @@
         music.volume = .7;
         console.log(music);
 
-        function slider(){
-            const n = event.target.dataset.page;
+        function slider(v){
+            console.log(v);
+            const g = document.querySelector('.gcontainer');
+            const gw = g.clientWidth;
+            const gstart = g.scrollLeft;
+            const y = gw + v
+            x = gw * v;
+            console.log(x);
+            g.scrollLeft = x;
         }
 
         const observer = new IntersectionObserver((arr) => {

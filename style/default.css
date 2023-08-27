@@ -54,6 +54,7 @@ body::-webkit-scrollbar{
     display: none;
 }
 /* ======================================================================== */
+
 .line-vertical-thin-light{
     width: 1px;
     border: 1px solid #000;
@@ -93,4 +94,7 @@ body::-webkit-scrollbar{
     opacity: .2;
     height: 1px;
     margin: 5px auto;
+}
+.dpnone{
+    display: none;
 }
