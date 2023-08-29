@@ -342,8 +342,23 @@ section{
 .howcome .detail .description{
     font-size: 15px;
 }
+/* ===============sc6=============== */
+.sc6
+{
+    padding: 4em 10px;
+}
+.sc6 .noti{
+    padding: 4em 1em;
+    border: 1px double rgb(227, 227, 227);
+    border-radius: 5px;
+}
+.noti p{
+    padding: 10px;
+}
 /* ===============sc=============== */
-/* ===============sc=============== */
+.sc7{
+    padding: 4em 10px;
+}
 /* ===============sc=============== */
 
 
