@@ -7,7 +7,8 @@
     <meta content="정지훈👩‍❤️‍👨김태희 결혼식에 초대합니다" property="og:title">
     <meta content="23년11월4일 2시30분 광명무역센터컨벤션" property="og:description">
     <!-- 네이버지도 -->
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a66a9babe9fae3d9a18972e48f1feab2
+    "></script>
 
     <title>myletter</title>
 </head>
@@ -184,53 +185,63 @@
                 <div class="sc-title">오시는 길</div>
                 <div class="line-s-thin"></div>
             </div>
-            <div class="fade-0 map" id="map">(네이버맵)</div>
-            <div class="howcome">
-                <div class="head">
-                    <div class="fade-0">경기 광명시 일직로 72</div>
-                    <div class="fade-0">광명무역센터컨벤션 3층</div>
-                </div>
-
-                <div class="fade-0">
-                    <div class="line-s-thin-2"></div>
-                </div>
-
-                <div class="detail">
-<div class="fade-0 subway">
-<div class="title">지하철</div>
-<div class="description">1호선 광명역(영등포 ~ 광명역) 5번출구 
-~ 도보 5분거리
-1호선 관악역 1번출구(마을버스 1-1 코스트코 광명점 하차) 
-~ 도보 1분거리</div>
-</div>
-<div class="fade-0 bus">
-<div class="title">버스</div>
-<div class="description">KTX광명역, 광명중합터미널, 코스트코 광명점 정류장 하차
-- KTX광명역 셔틀버스 :
-8507 (서울대입구역 2번출구 ~ 사당역 4번출구 ~ KTX광명역)
-- 간선 : 505
-- 지선 : 5627, 5633
-- 직행 : 3001, 3002, G9633
-- 공항 : 6004, 6014
-- 일반 : 3, 8-2, 12, 17, 22, 778, 102
-- 마을 : 1-1, 1-3,88</div>
+            <div class="container">
+                <div class="fade-0 map" id="map"></div>
+                <button class="copymap fade-0" onclick="mapCopy()">
+                    <a href="https://map.kakao.com/link/map/491238215" target="_blank">지도 자세히보기</a>
+                </button>
+                <div class="howcome">
+                    <div class="head">
+                        <div class="fade-0">경기 광명시 일직로 72</div>
+                        <div class="fade-0">광명무역센터컨벤션 3층</div>
                     </div>
-                    <div class="fade-0 car">
-                        <div class="title">자가용</div>
-<div class="description">네비게이션 : '광명국제무역센터' 입력
-주소검색 : “경기도 광명시 일직로 72”
-또는 경기도 광명시 일직동 515</div>
-                        
+                    <div class="fade-0">
+                        <div class="line-s-thin-2"></div>
                     </div>
-                    <div class="fade-0 ktx">
-                        <div class="title">KTX</div>
-<div class="description">서울역, 용산역에서 KTX광명역까지 15분 소요</div>
-                        
+                    <div class="detail">
+                        <div class="fade-0 subway">
+                            <div class="title">지하철</div>
+                            <div class="description">
+                                1호선 광명역(영등포 ~ 광명역) 5번출구 <br>
+                                ~ 도보 5분거리<br>
+                                1호선 관악역 1번출구(마을버스 1-1 코스트코 광명점 하차) <br>
+                                ~ 도보 1분거리
+                            </div>
+                        </div>
+                        <div class="fade-0 bus">
+                            <div class="title">버스</div>
+                            <div class="description">
+                                KTX광명역, 광명중합터미널, 코스트코 광명점 정류장 하차<br>
+                                - KTX광명역 셔틀버스 :<br>
+                                8507 (서울대입구역 2번출구 ~ 사당역 4번출구 ~ KTX광명역)<br>
+                                - 간선 : 505<br>
+                                - 지선 : 5627, 5633<br>
+                                - 직행 : 3001, 3002, G9633<br>
+                                - 공항 : 6004, 6014<br>
+                                - 일반 : 3, 8-2, 12, 17, 22, 778, 102<br>
+                                - 마을 : 1-1, 1-3,88
+                            </div>
+                        </div>
+                        <div class="fade-0 car">
+                            <div class="title">자가용</div>
+                            <div class="description">
+                                네비게이션 : '광명국제무역센터' 입력<br>
+                                주소검색 : “경기도 광명시 일직로 72”<br>
+                                또는 경기도 광명시 일직동 515<br>
+                            </div>
+                            
+                        </div>
+                        <div class="fade-0 ktx">
+                            <div class="title">KTX</div>
+                            <div class="description">서울역, 용산역에서 KTX광명역까지 15분 소요</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="sc6 fade-0"></section>
+        <section class="sc6 fade-0">
+            
+        </section>
         <section class="sc7 fade-0"></section>
         <section class="sc8 fade-0"></section>
     </div>
@@ -262,14 +273,31 @@
         const fadeElements = document.querySelectorAll('.fade-0');
         fadeElements.forEach((e) => observer.observe(e));
 
-        // 네이버맵
-        const mapOptions = {
-            center: new naver.maps.LatLng(37.3595704, 127.105399),
-            zoom: 10
+        // 카카오맵
+        const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        const options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(37.420029421298764, 126.88918847778551), //지도의 중심좌표. 컨벤션센터의 위도경도 (http://map.esran.com/)
+            level: 3 //지도의 레벨(확대, 축소 정도)
         };
-        
-        const map = new naver.maps.Map('map', mapOptions);
 
+        const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        // 마커가 표시될 위치
+        const markerPosition  = new kakao.maps.LatLng(37.420029421298764, 126.88918847778551); 
+ 
+        // 마커 생성
+        const marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+ 
+        // 마커가 지도 위에 표시되도록 설정
+        marker.setMap(map);
+ 
+        // 아래 코드는 지도 위의 마커를 제거하는 코드
+        // marker.setMap(null);  
+        // function mapCopy(){
+        //     const m = "경기도 광명시 일직동"
+        // }
+        
         </script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
