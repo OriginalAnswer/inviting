@@ -15,10 +15,11 @@
 <body>
     <div class="screen">
         <div class="sc0 music">
-            <button class="music-btn">
+            <!-- <input type="checkbox" id="music-btn" class="dpnone" onclick=""> -->
+            <label for="music-btn" class="music-btn">
                 <i class="fa-solid fa-volume-high"></i>
                 <!-- <i class="fa-solid fa-volume-xmark"></i> -->
-            </button>
+            </label>
         </div>
         <audio loop preload="metadata" src="./music/precious-memories.mp3"
                 title="/music/precious-memories.mp3">
@@ -262,6 +263,9 @@
         music.volume = .65;
         console.log(music);
 
+        // function music(){
+
+        // }
         function slider(v){
             console.log(v);
             const g = document.querySelector('.gcontainer');
