@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <meta content="정지훈👩‍❤️‍👨김태희 결혼식에 초대합니다" property="og:title">
     <meta content="23년11월4일 2시30분 광명무역센터컨벤션" property="og:description">
+    <!-- 네이버지도 -->
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
+
     <title>myletter</title>
 </head>
 <body>
@@ -181,7 +184,7 @@
                 <div class="sc-title">오시는 길</div>
                 <div class="line-s-thin"></div>
             </div>
-            <div class="fade-0 map">(네이버맵)</div>
+            <div class="fade-0 map" id="map">(네이버맵)</div>
             <div class="howcome">
                 <div class="head">
                     <div class="fade-0">경기 광명시 일직로 72</div>
@@ -234,8 +237,8 @@
     <script>
         const music = document.querySelector('audio');
         console.log(music);
-        // music.play();
-        music.volume = .7;
+        music.play();
+        music.volume = .65;
         console.log(music);
 
         function slider(v){
@@ -259,7 +262,15 @@
         const fadeElements = document.querySelectorAll('.fade-0');
         fadeElements.forEach((e) => observer.observe(e));
 
-    </script>
+        // 네이버맵
+        const mapOptions = {
+            center: new naver.maps.LatLng(37.3595704, 127.105399),
+            zoom: 10
+        };
+        
+        const map = new naver.maps.Map('map', mapOptions);
+
+        </script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
 </html>
