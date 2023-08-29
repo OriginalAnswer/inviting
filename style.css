@@ -4,6 +4,7 @@
     --c2:#06080Faa;
     --sc-border: 1px solid rgba(229,229,229,1);
     
+    --c-music-btn-x:#acacac;
     --c-music-btn:#06080Faa;
     --c-music-btn-hover:#06080f;
     --c-music-btn-light:#0000002c;
@@ -68,9 +69,11 @@ section{
     background-color: var(--bgc-music-btn);
     
     line-height: 1rem;
-    color: var(--c-music-btn);
     font-size: 0.7rem;
-    color: var(--c-music-btn);
+}
+.music-btn i{
+    color: var(--c-music-btn-x);
+
 }
 .music-btn:hover{
     background-color: var(--bgc-music-btn-hover);

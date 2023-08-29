@@ -16,9 +16,9 @@
     <div class="screen">
         <div class="sc0 music">
             <!-- <input type="checkbox" id="music-btn" class="" checked onclick="musicControl()"> -->
-            <button for="music-btn" class="music-btn" onclick="musicOnOff()">
-                <i class="fa-solid fa-volume-high"></i>
-                <!-- <i class="fa-solid fa-volume-xmark"></i> -->
+            <button for="music-btn" class="music-btn">
+                <!-- <i class="fa-solid fa-volume-high"></i> -->
+                <i class="fa-solid fa-volume-xmark"></i>
             </button>
         </div>
         <audio loop preload="metadata" src="./music/precious-memories.mp3"
@@ -260,19 +260,24 @@
     <script>
         const music = document.querySelector('#audio');
         music.volume = .6;
-        music.play()
-        const musicBtn = document.querySelector('.music-btn').addEventListener("click", ()=>{
+
+        console.log(music);
+        music.play();
+        const musicBtn = document.querySelector('.music-btn')
+        musicBtn.addEventListener("click", ()=>{
             if (music.paused) {
                 music.play();
             } else {
                 music.pause();
             }
         });
+        document.querySelector('.music-btn').click();
 
         // function musicControl(v){
         //     const b = musicBtn;
         //     console.log(b.attributes)
         // }
+        
 
         function slider(v){
             console.log(v);
@@ -319,7 +324,6 @@
         // function mapCopy(){
         //     const m = "경기도 광명시 일직동"
         // }
-        
         </script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
