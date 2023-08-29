@@ -18,7 +18,8 @@
             <!-- <input type="checkbox" id="music-btn" class="" checked onclick="musicControl()"> -->
             <button for="music-btn" class="music-btn">
                 <!-- <i class="fa-solid fa-volume-high"></i> -->
-                <i class="fa-solid fa-volume-xmark"></i>
+                <i class="music-btn-i fa-solid fa-volume-xmark"></i>
+                <span>음악이 준비되어 있습니다.</span>
             </button>
         </div>
         <audio loop preload="metadata" src="./music/precious-memories.mp3"
@@ -260,18 +261,33 @@
     <script>
         const music = document.querySelector('#audio');
         music.volume = .6;
-
-        console.log(music);
-        music.play();
-        const musicBtn = document.querySelector('.music-btn')
-        musicBtn.addEventListener("click", ()=>{
+        
+        const mi = document.querySelector('.music-btn-i');
+        const mb = document.querySelector('.music-btn');
+        mb.addEventListener("click", ()=>{
             if (music.paused) {
                 music.play();
+                mi.classList.remove("fa-volume-xmark");
+                mi.classList.add("fa-volume-high");
+                mi.style.color = "var(--c-music-btn)";
+                
             } else {
                 music.pause();
+                mi.classList.remove("fa-volume-high");
+                mi.classList.add("fa-volume-xmark");
+                mi.style.color = "var(--c-music-btn-x)";
             }
         });
-        document.querySelector('.music-btn').click();
+        
+        setTimeout(function mc(){
+            // document.querySelector('.music-btn').click();
+            console.log('hi')
+            music.setAttribute('muted');
+            // music.click();
+            // music.removeAttribute('muted');
+            // music.play();
+        },2000);
+        setTimeout();
 
         // function musicControl(v){
         //     const b = musicBtn;

@@ -70,6 +70,8 @@ section{
     
     line-height: 1rem;
     font-size: 0.7rem;
+    min-width: 33px;
+    overflow: hidden;
 }
 .music-btn i{
     color: var(--c-music-btn-x);
@@ -78,6 +80,13 @@ section{
 .music-btn:hover{
     background-color: var(--bgc-music-btn-hover);
     color: var(--c-music-btn-hover);
+}
+.music-btn span{
+    padding-left: 5px;
+    transform: width(10px);
+}
+@keyframes identifier {
+    
 }
 /*  */
 .sc-head{
