@@ -467,27 +467,30 @@
         //     console.log(b.attributes)
         // }
         
+        
+// =============== 갤러리 ================
+function slider(v){
+    console.log(v);
+    const g = document.querySelector('.gcontainer');
+    const gw = g.clientWidth;
+    const gstart = g.scrollLeft;
+    const y = gw + v
+    x = gw * v;
+    console.log(x);
+    g.scrollLeft = x;
+}
 
-        function slider(v){
-            console.log(v);
-            const g = document.querySelector('.gcontainer');
-            const gw = g.clientWidth;
-            const gstart = g.scrollLeft;
-            const y = gw + v
-            x = gw * v;
-            console.log(x);
-            g.scrollLeft = x;
+// =============== 전체 스크롤 애니메이션 ================
+const observer = new IntersectionObserver((arr) => {
+    arr.forEach((e) => {
+        if(e.isIntersecting){
+            e.target.classList.add('fade-up');
         }
+    })
+})
+const fadeElements = document.querySelectorAll('.fade-0');
+fadeElements.forEach((e) => observer.observe(e));
 
-        const observer = new IntersectionObserver((arr) => {
-            arr.forEach((e) => {
-                if(e.isIntersecting){
-                    e.target.classList.add('fade-up');
-                }
-            })
-        })
-        const fadeElements = document.querySelectorAll('.fade-0');
-        fadeElements.forEach((e) => observer.observe(e));
 // =============== 카카오 ================
         
         // 카카오맵
