@@ -452,7 +452,7 @@ section{
     text-align: left;    
 }
 
-.account .r div{
+.account .r button{
     border: 1px solid var(--c-border-lightgray);
     border-radius: 8px;
     font-size: 0.75em;
@@ -460,11 +460,11 @@ section{
     cursor: pointer;
     width: 100%;
 }
-.account .r div i{
+.account .r button i{
     margin-right: 5px;
     font-size: 1.2em;
 }
-.account .r div:hover{
+.account .r button:hover{
     background-color: var(--bgc-gray);
     border-color: #939393;
 }

@@ -19,7 +19,7 @@
             <button for="music-btn" class="music-btn">
                 <!-- <i class="fa-solid fa-volume-high"></i> -->
                 <i class="music-btn-i fa-solid fa-volume-xmark"></i>
-                <span>음악이 준비되어 있습니다.</span>
+                <span id="music-text">음악이 준비되어 있습니다.</span>
             </button>
         </div>
         <audio loop preload="metadata" src="./music/precious-memories.mp3"
@@ -274,8 +274,8 @@
                                 <div class="b">1234567890</div>
                             </div>
                             <div class="r">
-                                <div class="t"><i class="fa-solid fa-comment"></i>카카오페이</div>
-                                <div class="b"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</div>
+                                <button class="t" value="https://qr.kakaopay.com/FYvfGLRET" onclick="kakaopay(this.value)"><i class="fa-solid fa-comment"></i>카카오페이</button>
+                                <button class="b" value="우리은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
                             </div>
                         </div>
                         <div class="account">
@@ -289,7 +289,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <div class="b"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</div>
+                                <button class="b" value="부산은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
                             </div>
                         </div>
                         <div class="account">
@@ -303,7 +303,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <div class="b"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</div>
+                                <button class="b" value="국민은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
                             </div>
                         </div>
                     </div>
@@ -323,8 +323,8 @@
                                 <div class="b">1234567890</div>
                             </div>
                             <div class="r">
-                                <div class="t"><i class="fa-solid fa-comment"></i>카카오페이</div>
-                                <div class="b"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</div>
+                                <button class="t" value="https://qr.kakaopay.com/FYvfGLRET" onclick="kakaopay(this.value)"><i class="fa-solid fa-comment"></i>카카오페이</button>
+                                <button class="b" value="우리은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
                             </div>
                         </div>
                         <div class="account">
@@ -338,7 +338,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <div class="b"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</div>
+                                <button class="b" value="부산은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
                             </div>
                         </div>
                         <div class="account">
@@ -352,7 +352,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <div class="b"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</div>
+                                <button class="b" value="국민은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
                             </div>
                         </div>
                     </div>
@@ -368,9 +368,15 @@
     <script>
         const music = document.querySelector('#audio');
         music.volume = .8;
-        
+        const mt = document.querySelector('#music-text');
         const mi = document.querySelector('.music-btn-i');
         const mb = document.querySelector('.music-btn');
+        music.play();
+        if(music.paused){
+            mt.innerText = '음악이 준비되어 있습니다.'
+        }else{
+            mt.innerText = '음악이 재생되고 있습니다.'
+        }
         mb.addEventListener("click", ()=>{
             if (music.paused) {
                 music.play();
@@ -439,6 +445,13 @@
         // function mapCopy(){
         //     const m = "경기도 광명시 일직동"
         // }
+
+        function copy(v){
+            navigator.clipboard.writeText(v).then(function(){alert( v + " 이 복사되었습니다.")});
+        }
+        function kakaopay(v){
+            window.open(v);
+        }
         </script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
