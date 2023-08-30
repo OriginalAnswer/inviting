@@ -449,12 +449,14 @@
                 mi.classList.remove("fa-volume-xmark");
                 mi.classList.add("fa-volume-high");
                 mi.style.color = "var(--c-music-btn)";
+                mt.innerText = '재생'
                 
             } else {
                 music.pause();
                 mi.classList.remove("fa-volume-high");
                 mi.classList.add("fa-volume-xmark");
                 mi.style.color = "var(--c-music-btn-x)";
+                mt.innerText = '정지'
             }
         });
         
