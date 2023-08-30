@@ -367,14 +367,18 @@
     </div>
     <script>
         const music = document.querySelector('#audio');
-        music.volume = .8;
+        music.volume = .9;
         const mt = document.querySelector('#music-text');
         const mi = document.querySelector('.music-btn-i');
         const mb = document.querySelector('.music-btn');
         music.play();
         if(music.paused){
+            mi.classList.remove("fa-volume-xmark");
+            mi.classList.add("fa-volume-high");
             mt.innerText = '음악이 준비되어 있습니다.'
         }else{
+            mi.classList.remove("fa-volume-high");
+            mi.classList.add("fa-volume-xmark");
             mt.innerText = '음악이 재생되고 있습니다.'
         }
         mb.addEventListener("click", ()=>{
