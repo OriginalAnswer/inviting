@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width" />
     <link rel="stylesheet" href="style.css">
-    <meta content="정지훈👩‍❤️‍👨김태희 결혼식에 초대합니다" property="og:title">
-    <meta content="23년11월4일 2시30분 광명무역센터컨벤션" property="og:description">
+    <meta name="title" content="정지훈👩‍❤️‍👨김태희 결혼식에 초대합니다" property="og:title">
+    <meta name="description" content="23년11월4일 2시30분 광명무역센터컨벤션" property="og:description">
+    <meta name="type" content="1-modoo simple">
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a66a9babe9fae3d9a18972e48f1feab2
     "></script>
     <script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -368,8 +369,8 @@
         </section>
         <footer class="sc8 fade-0">
             <div class="share">
-                <div class="kakaotalk" onclick="kakaoShare()">
-                    <div class="icon"><?xml version="1.0" standalone="no"?>
+                <div class="kakaotalk">
+                    <div class="icon" onclick="kakaoShare()"><?xml version="1.0" standalone="no"?>
                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
                          "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -407,13 +408,13 @@
                         </g>
                         </svg>
                         </div>
-                    <p>카카오톡</p>
-                    <p>공유하기</p>
+                    <p onclick="kakaoShare()">카카오톡</p>
+                    <p onclick="kakaoShare()">공유하기</p>
                 </div>
-                <div class="link" onclick="copyLink(window.document.location.href)">
-                    <div class="icon"><i class="fa-solid fa-link"></i></div>
-                    <p>링크복사</p>
-                    <p>공유하기</p>
+                <div class="link">
+                    <div class="icon" onclick="copyLink(window.document.location.href)"><i class="fa-solid fa-link"></i></div>
+                    <p onclick="copyLink(window.document.location.href)">링크복사</p>
+                    <p onclick="copyLink(window.document.location.href)">공유하기</p>
                 </div>
             </div>
             <div class="copyright">
