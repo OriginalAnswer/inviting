@@ -93,7 +93,7 @@ section{
     margin: 0 8px 0 0;
     flex-shrink: 0;
     opacity: 0;
-    animation: musicNotiOp 3s 1.5s alternate 2 ;
+    animation: musicNotiOp 2.7s 1s alternate 2 ;
     animation-timing-function: 2s;
 }
 @keyframes musicNoti {
