@@ -396,6 +396,9 @@ section{
     border-radius: 8px;
     font-size: .95em;
 }
+.sc7 .sc-head{
+    margin-top: .5em;
+}
 .sc7 .box:not(:has(details)){
     padding: 10px;
 }
@@ -468,9 +471,46 @@ section{
     background-color: var(--bgc-gray);
     border-color: #939393;
 }
-/* ===============sc=============== */
-
-
+/* ===============footer=============== */
+footer, .share > div{
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer{
+    background-color: var(--bgc-gray);
+    border: 1px solid var(--c-border-lightgray);
+    padding: 2em;
+}
+.share{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.share p{
+    font-size: .5em;
+}
+.share > div{
+    width: auto;
+}
+.share div .icon{
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px; 
+}
+.copyright{
+    font-size: .5em;
+}
+.copyright a{
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 
 /* 스크롤 떠오르는 애니메이션 */
