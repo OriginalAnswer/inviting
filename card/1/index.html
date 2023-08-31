@@ -157,9 +157,14 @@
                     <img class="inner" id="8" src="./img/8.jpg">
                     <img class="inner" id="9" src="./img/9.jpg">
                     <img class="inner" id="10" src="./img/10.jpg">
+                    <div class="on-slide on-slide-nav">
+                        <div class="l" onclick=""></div>
+                        <div class="c"></div>
+                        <div class="r" onclick=""></div>
+                    </div>
                 </div>
                 <nav class="slider-nav">
-                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="0" id="g-0">
+                    <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="0" id="g-0" checked>
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="1" id="g-1">
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="2" id="g-2">
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="3" id="g-3">
@@ -424,8 +429,9 @@
     </div>
 
     <script>
-        // ****고객 코드****
-        const guestNumber = 1;
+// ****고객 코드****
+const guestNumber = 1;
+// ****고객 코드****
         const music = document.querySelector('#audio');
         music.volume = .9;
         const mt = document.querySelector('#music-text');
@@ -479,6 +485,25 @@ function slider(v){
     console.log(x);
     g.scrollLeft = x;
 }
+
+const sliderDots = document.querySelectorAll('.slider-dot');
+const gContainer = document.querySelector('.gcontainer');
+
+gContainer.addEventListener('scroll', updateSliderDots);
+
+function updateSliderDots() {
+    const currentIndex = Math.round(gContainer.scrollLeft / gContainer.clientWidth);
+    sliderDots.forEach((dot, index) => {
+        if (index === currentIndex) {
+            dot.style.backgroundColor = 'var(--bgc-s-dot-hover)';
+        } else {
+            dot.style.backgroundColor = 'var(--bgc-s-dot-default)';
+        }
+    });
+}
+        // 무한 스크롤
+
+
 
 // =============== 전체 스크롤 애니메이션 ================
 const observer = new IntersectionObserver((arr) => {

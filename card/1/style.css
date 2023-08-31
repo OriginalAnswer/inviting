@@ -295,7 +295,26 @@ section{
     cursor: pointer;
     scroll-snap-align: start;
 }
+    /*  */
+    .on-slide{
+        width: 100%;
+        height: 80%;
+        position: fixed;
+        left: 0;
+        top: 10%;
+        background: #dc96963c;
 
+        /* display: flex;
+        justify-content: space-between; */
+    }
+    /* .on-slide .l,
+    .on-slide .r{
+        height: 100%;
+        width: 30%;
+        border: 1px solid #06080F;
+        cursor: pointer;
+    } */
+    /*  */
 .slider-nav{
     display: flex;
     flex-direction: row;
@@ -315,6 +334,9 @@ section{
     
     border-radius: 50px;
     cursor: pointer;
+}
+.slider-dot:nth-of-type(1){
+    background-color: var(--bgc-s-dot-hover);
 }
 .slider-dot:hover{
     background-color: var(--bgc-s-dot-hover);
