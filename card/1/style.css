@@ -295,26 +295,22 @@ section{
     cursor: pointer;
     scroll-snap-align: start;
 }
-    /*  */
-    .on-slide{
-        width: 100%;
-        height: 80%;
-        position: fixed;
-        left: 0;
-        top: 10%;
-        background: #dc96963c;
-
-        /* display: flex;
-        justify-content: space-between; */
-    }
-    /* .on-slide .l,
-    .on-slide .r{
-        height: 100%;
-        width: 30%;
-        border: 1px solid #06080F;
-        cursor: pointer;
-    } */
-    /*  */
+/*  */
+.onslider{
+    width: 30%;
+    height: 85%;
+    position: fixed;
+    top: 5%;
+    /* background: #dc96963c; */
+    cursor: pointer;
+}
+.onslider-l{
+    left: 0;
+}
+.onslider-r{
+    right: 0;
+}
+/*  */
 .slider-nav{
     display: flex;
     flex-direction: row;

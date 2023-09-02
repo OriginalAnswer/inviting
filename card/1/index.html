@@ -157,12 +157,10 @@
                     <img class="inner" id="8" src="./img/8.jpg">
                     <img class="inner" id="9" src="./img/9.jpg">
                     <img class="inner" id="10" src="./img/10.jpg">
-                    <div class="on-slide on-slide-nav">
-                        <div class="l" onclick=""></div>
-                        <div class="c"></div>
-                        <div class="r" onclick=""></div>
-                    </div>
                 </div>
+                <div class="onslider onslider-l" onclick="onSlider(-1)"></div>
+                <div class="c"></div>
+                <div class="onslider onslider-r" onclick="onSlider(1)"></div>
                 <nav class="slider-nav">
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="0" id="g-0" checked>
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="1" id="g-1">
@@ -175,17 +173,17 @@
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="8" id="g-8">
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="9" id="g-9">
                     <input type="radio" class="dpnone" onclick="slider(this.value)" name="g" value="10" id="g-10">
-                    <label class="slider-dot"  for="g-0"></label>
-                    <label class="slider-dot"  for="g-1"></label>
-                    <label class="slider-dot"  for="g-2"></label>
-                    <label class="slider-dot"  for="g-3"></label>
-                    <label class="slider-dot"  for="g-4"></label>
-                    <label class="slider-dot"  for="g-5"></label>
-                    <label class="slider-dot"  for="g-6"></label>
-                    <label class="slider-dot"  for="g-7"></label>
-                    <label class="slider-dot"  for="g-8"></label>
-                    <label class="slider-dot"  for="g-9"></label>
-                    <label class="slider-dot"  for="g-10"></label>
+                    <label class="slider-dot" for="g-0"></label>
+                    <label class="slider-dot" for="g-1"></label>
+                    <label class="slider-dot" for="g-2"></label>
+                    <label class="slider-dot" for="g-3"></label>
+                    <label class="slider-dot" for="g-4"></label>
+                    <label class="slider-dot" for="g-5"></label>
+                    <label class="slider-dot" for="g-6"></label>
+                    <label class="slider-dot" for="g-7"></label>
+                    <label class="slider-dot" for="g-8"></label>
+                    <label class="slider-dot" for="g-9"></label>
+                    <label class="slider-dot" for="g-10"></label>
                 </nav>
             </div>
         </section>
@@ -475,19 +473,23 @@ const guestNumber = 1;
         
         
 // =============== 갤러리 ================
+let gPage = 0;
+
 function slider(v){
     console.log(v);
     const g = document.querySelector('.gcontainer');
     const gw = g.clientWidth;
-    const gstart = g.scrollLeft;
+    // const gstart = g.scrollLeft;
     const y = gw + v
     x = gw * v;
     console.log(x);
     g.scrollLeft = x;
+    gPage = parseInt(v);
 }
 
 const sliderDots = document.querySelectorAll('.slider-dot');
 const gContainer = document.querySelector('.gcontainer');
+const sliderDotsInput = document.querySelectorAll('input[name=g]');
 
 gContainer.addEventListener('scroll', updateSliderDots);
 
@@ -500,10 +502,32 @@ function updateSliderDots() {
             dot.style.backgroundColor = 'var(--bgc-s-dot-default)';
         }
     });
+    sliderDotsInput.forEach((dot, index) => {
+        if (index === currentIndex) {
+            gPage = parseInt(dot.value);
+        }
+    });
 }
-        // 무한 스크롤
-
-
+        //온 슬라이더 가이드
+function onSlider(v){
+    console.log(gPage);
+    console.log(v);
+    gPage = gPage + v;
+    console.log(gPage);
+    if(gPage === 11){
+        gPage = 0;
+    } else if(gPage === -1){
+        gPage = 10;
+    }
+    const g = document.querySelector('.gcontainer');
+    const gw = g.clientWidth;
+    // const gstart = g.scrollLeft;
+    const y = gw + gPage
+    x = gw * gPage;
+    console.log(x);
+    g.scrollLeft = x;
+}
+// 슬라이더 현재 페이지 옵저버
 
 // =============== 전체 스크롤 애니메이션 ================
 const observer = new IntersectionObserver((arr) => {
