@@ -587,35 +587,35 @@ fadeElements.forEach((e) => observer.observe(e));
         
 
         function sendLinkCustom() {
-            Kakao.init("a66a9babe9fae3d9a18972e48f1feab2");
             Kakao.Link.sendCustom({
                 templateId: [97894]
             });
+            Kakao.init("a66a9babe9fae3d9a18972e48f1feab2");
         }
         try {
             function kakaoShare() {
-                Kakao.init('a66a9babe9fae3d9a18972e48f1feab2')
                 Kakao.Link.sendDefault({
-                objectType: 'feed',
-                content: {
-                    title: windowTitle,
-                    description: windowDescription,
-                    imageUrl:`https://originalanswer.github.io/inviting/card/${guestNumber}/img/main.png`,
-                    link: {
-                    mobileWebUrl: windowURL,
-                    webUrl: windowURL,
+                    objectType: 'feed',
+                    content: {
+                        title: windowTitle,
+                        description: windowDescription,
+                        imageUrl:`https://originalanswer.github.io/inviting/card/${guestNumber}/img/main.png`,
+                        link: {
+                            mobileWebUrl: windowURL,
+                            webUrl: windowURL,
+                        },
                     },
-                },
-                buttons: [
-                    {
-                    title: '모바일 초대장 보기',
-                    link: {
-                        mobileWebUrl: windowURL,
-                        webUrl: windowURL,
-                    },
-                    },
-                ],
+                    buttons: [
+                        {
+                            title: '모바일 초대장 보기',
+                            link: {
+                                mobileWebUrl: windowURL,
+                                webUrl: windowURL,
+                            },
+                        },
+                    ],
                 })
+                Kakao.init('a66a9babe9fae3d9a18972e48f1feab2')
             };
             window.kakaoDemoCallback && window.kakaoDemoCallback()
         } catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) };
