@@ -575,9 +575,21 @@ fadeElements.forEach((e) => observer.observe(e));
         }
         //https://velog.io/@skawnkk/%EC%9D%B8%EC%95%B1%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0copy-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0-clipboardData
 // ==============================================
+        // function copyLink(v){
+        //     navigator.clipboard.writeText(v).then(function(){alert("링크가 복사되었습니다.")});
+        // }
         function copyLink(v){
-            // navigator.clipboard.writeText(v).then(function(){alert("링크가 복사되었습니다.")});
-            navigator.share(v);
+            const link = v;
+            let shareData = {
+                'url' : link
+            }
+            async (shareData) => {
+                try {
+                    await navigator.share(shareData);
+                } catch (error) {
+                    console.error(error);
+                }
+            };
         }
 
         const windowURL = window.location.href;
