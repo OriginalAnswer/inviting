@@ -25,6 +25,7 @@
 }
 *{
     color: var(--c);
+    -webkit-tap-highlight-color : #00000000;
 }
 .screen{
     margin-left: auto;
