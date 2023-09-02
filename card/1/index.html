@@ -599,10 +599,10 @@ fadeElements.forEach((e) => observer.observe(e));
         
 
         function sendLinkCustom() {
+            Kakao.init("a66a9babe9fae3d9a18972e48f1feab2");
             Kakao.Link.sendCustom({
                 templateId: [97894]
             });
-            Kakao.init("a66a9babe9fae3d9a18972e48f1feab2");
         }
         try {
             function kakaoShare() {
