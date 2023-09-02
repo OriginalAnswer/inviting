@@ -423,6 +423,11 @@ section{
     padding: 10px;
     cursor: pointer;
 }
+.sc7 .box:not(:has(details)):hover,
+.call-summary:hover{
+    transition: background-color 0s;
+    background-color: var(--bgc-gray) !important
+}
 /* .accounts > .account > .l .c .r */
 .sc7 details{
     /* border: 1px solid var(--c-border-lightgray); */
@@ -433,6 +438,9 @@ section{
     padding: 10px;
     width: 100%;
     cursor: pointer;
+}
+.call-summary{
+    background-color: #ffffff00 !important
 }
 .sc7 summary i {
     position: absolute;
@@ -445,6 +453,9 @@ section{
 .sc7 details[open] summary > i{
     transform: rotateZ(-180deg);
 }
+.sc7 details[open] .call-summary{
+    background-color: var(--bgc-gray) !important
+}
 
 .accounts, .calls{
     padding: 15px;
@@ -456,15 +467,27 @@ section{
     font-size: .875em;
     padding: 10px 0;
 }
-.account:not(:last-child){
+
+.account:not(:last-child),
+.call:nth-child(1),
+.call:nth-child(4){
     border-bottom: 1px solid var(--c-border-lightgray);
     margin-bottom: 5px;
 }
+.call:nth-child(3),
+.call:nth-child(6){
+    margin-bottom: 10px;
+}
+
 .account:last-child{
     padding-bottom: 0;
 }
+
 .account div div{
     padding: 5px 0;
+}
+.call{
+    justify-content: center;
 }
 .account > div{
     display: flex;
@@ -484,9 +507,15 @@ section{
     width: 100%;
     max-width: 45%;
 }
+.call .c{
+    max-width: 60%;
+}
+.call .c div{
+    font-size: 1.1em;
+}
 .account .c div{
     width: 100%;
-    text-align: left;    
+    text-align: left;
 }
 
 .account .r button{
@@ -500,14 +529,21 @@ section{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    
 }
 .account .r button i{
     margin-right: 5px;
     font-size: 1.2em;
 }
+
 .account .r button span{
     width: 100%;
+}
+/* .call .r{
+    width: auto;
+} */
+.call .r button,
+.call .r button span{
+    width: auto;
 }
 .account .r button:hover{
     background-color: var(--bgc-gray);
