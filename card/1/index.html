@@ -281,8 +281,8 @@
                                 <div class="b">1234567890</div>
                             </div>
                             <div class="r">
-                                <button class="t" value="https://qr.kakaopay.com/FYvfGLRET" onclick="kakaopay(this.value)"><i class="fa-solid fa-comment"></i>카카오페이</button>
-                                <button class="b" value="우리은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
+                                <button class="t" value="https://qr.kakaopay.com/FYvfGLRET" onclick="kakaopay(this.value)"><i class="fa-solid fa-comment"></i><span>카카오페이</span></button>
+                                <button class="b" value="우리은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i><span>계좌 복사하기</span></button>
                             </div>
                         </div>
                         <div class="account">
@@ -296,7 +296,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <button class="b" value="부산은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
+                                <button class="b" value="부산은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i><span>계좌 복사하기</span></button>
                             </div>
                         </div>
                         <div class="account">
@@ -310,7 +310,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <button class="b" value="국민은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
+                                <button class="b" value="국민은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i><span>계좌 복사하기</span></button>
                             </div>
                         </div>
                     </div>
@@ -330,8 +330,8 @@
                                 <div class="b">1234567890</div>
                             </div>
                             <div class="r">
-                                <button class="t" value="https://qr.kakaopay.com/FYvfGLRET" onclick="kakaopay(this.value)"><i class="fa-solid fa-comment"></i>카카오페이</button>
-                                <button class="b" value="우리은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
+                                <button class="t" value="https://qr.kakaopay.com/FYvfGLRET" onclick="kakaopay(this.value)"><i class="fa-solid fa-comment"></i><span>카카오페이</span></button>
+                                <button class="b" value="우리은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i><span>계좌 복사하기</span></button>
                             </div>
                         </div>
                         <div class="account">
@@ -345,7 +345,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <button class="b" value="부산은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
+                                <button class="b" value="부산은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i><span>계좌 복사하기</span></button>
                             </div>
                         </div>
                         <div class="account">
@@ -359,7 +359,7 @@
                             </div>
                             <div class="r">
                                 <!-- <div class="t"></div> -->
-                                <button class="b" value="국민은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i>계좌 복사하기</button>
+                                <button class="b" value="국민은행 1234567890" onclick="copy(this.value)"><i class="fa-regular fa-clipboard"></i><span>계좌 복사하기</span></button>
                             </div>
                         </div>
                     </div>
@@ -546,7 +546,7 @@ fadeElements.forEach((e) => observer.observe(e));
         const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
         const options = { //지도를 생성할 때 필요한 기본 옵션
             center: new kakao.maps.LatLng(37.420029421298764, 126.88918847778551), //지도의 중심좌표. 컨벤션센터의 위도경도 (http://map.esran.com/)
-            level: 3 //지도의 레벨(확대, 축소 정도)
+            level: 5 //지도의 레벨(확대, 축소 정도)
         };
 
         const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
@@ -566,16 +566,18 @@ fadeElements.forEach((e) => observer.observe(e));
         // function mapCopy(){
         //     const m = "경기도 광명시 일직동"
         // }
-
-        function copy(v){
-            navigator.clipboard.writeText(v).then(function(){alert( v + " 이 복사되었습니다.")});
-        }
+        
         function kakaopay(v){
             window.open(v);
         }
+        function copy(v){
+            navigator.clipboard.writeText(v).then(function(){alert( v + " 이 복사되었습니다.")});
+        }
+        //https://velog.io/@skawnkk/%EC%9D%B8%EC%95%B1%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0copy-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0-clipboardData
 // ==============================================
         function copyLink(v){
             navigator.clipboard.writeText(v).then(function(){alert("링크가 복사되었습니다.")});
+            navigator.share(v);
         }
 
         const windowURL = window.location.href;
