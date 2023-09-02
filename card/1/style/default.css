@@ -13,6 +13,13 @@ input, select, textarea{
     outline: none;
     background: none;
 }
+details > summary {
+    list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+display: none;
+}
 textarea{
     resize: none;
     font-family: 'Nanum Gothic',Helvetica, sans-serif ,serif;

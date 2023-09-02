@@ -421,6 +421,7 @@ section{
 }
 .sc7 .box:not(:has(details)){
     padding: 10px;
+    cursor: pointer;
 }
 /* .accounts > .account > .l .c .r */
 .sc7 details{
@@ -431,11 +432,24 @@ section{
     background-color: var(--bgc-gray);
     padding: 10px;
     width: 100%;
+    cursor: pointer;
 }
-.accounts{
+.sc7 summary i {
+    position: absolute;
+    font-size: 1em;
+    right: 10px;
+    top: 13px;
+    color: #0000007d;
+    /* transition: transform .5s ease-in-out; */
+}
+.sc7 details[open] summary > i{
+    transform: rotateZ(-180deg);
+}
+
+.accounts, .calls{
     padding: 15px;
 }
-.account{
+.account, .call{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
