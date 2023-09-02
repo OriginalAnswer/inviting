@@ -604,6 +604,7 @@ fadeElements.forEach((e) => observer.observe(e));
         }
         try {
             function kakaoShare() {
+                Kakao.init('a66a9babe9fae3d9a18972e48f1feab2')
                 Kakao.Link.sendDefault({
                     objectType: 'feed',
                     content: {
@@ -625,7 +626,6 @@ fadeElements.forEach((e) => observer.observe(e));
                         },
                     ],
                 })
-                Kakao.init('a66a9babe9fae3d9a18972e48f1feab2')
             };
             window.kakaoDemoCallback && window.kakaoDemoCallback()
         } catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) };
