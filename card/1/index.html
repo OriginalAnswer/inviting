@@ -371,9 +371,9 @@
                 <details>
                     <summary class="call-summary">혼주에게 연락하기<i class="fa-solid fa-chevron-down"></i></summary>
                     <div class="calls accounts">
-                        <div class="call"><span>신랑측</span></div>
+                        <div class="call call-head"><span>신랑측</span></div>
                         <div class="account call">
-                            <div class="l">
+                            <div class="l bx">
                                 <div class="t">아버지</div>
                                 <div class="b">어머니</div>
                             </div>
@@ -390,7 +390,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="call"><span>신부측</span></div>
+                        <div class="call call-head"><span>신부측</span></div>
                         <div class="account call">
                             <div class="l">
                                 <div class="t">아버지</div>
@@ -415,8 +415,8 @@
         </section>
         <footer class="sc8">
             <div class="share">
-                <div class="kakaotalk">
-                    <div class="icon" onclick="kakaoShare()"><?xml version="1.0" standalone="no"?>
+                <div class="kakaotalk" onclick="kakaoShare()">
+                    <div class="icon"><?xml version="1.0" standalone="no"?>
                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
                          "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -457,8 +457,8 @@
                     <p onclick="kakaoShare()">카카오톡</p>
                     <p onclick="kakaoShare()">공유하기</p>
                 </div>
-                <div class="link">
-                    <div class="icon" onclick="copyLink(window.document.location.href)"><i class="fa-solid fa-link"></i></div>
+                <div class="link" onclick="copyLink(window.document.location.href)">
+                    <div class="icon"><i class="fa-solid fa-link"></i></div>
                     <p>링크복사</p>
                     <p>공유하기</p>
                 </div>
@@ -468,7 +468,7 @@
             </div>
         </footer>
     </div>
-
+    <textarea class="hiddentext dpnone"></textarea>
     <script>
 // ****고객 코드****
 const guestNumber = 1;
@@ -613,27 +613,62 @@ fadeElements.forEach((e) => observer.observe(e));
         function kakaopay(v){
             window.open(v);
         }
+//======copy 카피=================================================
         function copy(v){
-            navigator.clipboard.writeText(v).then(function(){alert( v + " 이 복사되었습니다.")});
+            if (navigator.clipboard !== undefined) {
+                navigator.clipboard.writeText(v).then(() => {alert(v + ' 계좌가 복사되었습니다.');});
+            } else {
+            // execCommand 사용
+            const ta = document.querySelector('.hiddentext');
+            ta.value = v;
+            document.body.appendChild(ta);
+            ta.select();
+            ta.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('복사 실패', err);
+            }
+            ta.setSelectionRange(0, 0);
+            alert(v + '계좌가 복사되었습니다.');
+            }
         }
         //https://velog.io/@skawnkk/%EC%9D%B8%EC%95%B1%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0copy-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0-clipboardData
-// ==============================================
-        // function copyLink(v){
-        //     navigator.clipboard.writeText(v).then(function(){alert("링크가 복사되었습니다.")});
-        // }
+// =============================================================
         function copyLink(v){
-            const link = v;
-            let shareData = {
-                'url' : link
+            // navigator.clipboard.writeText(v).then(() => {alert("링크가 복사되었습니다.")});
+
+            if (navigator.clipboard !== undefined) {
+                navigator.clipboard.writeText(v).then(() => {alert('텍스트가 복사되었습니다.');});
+            } else {
+            // execCommand 사용
+            const ta = document.querySelector('.hiddentext');
+            ta.value = v;
+            document.body.appendChild(ta);
+            ta.select();
+            ta.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('복사 실패', err);
             }
-            async (shareData) => {
-                try {
-                    await navigator.share(shareData);
-                } catch (error) {
-                    console.error(error);
-                }
-            };
+            ta.setSelectionRange(0, 0);
+            alert('텍스트가 복사되었습니다.');
+            }
         }
+        // function copyLink(v){
+        //     const link = v;
+        //     let shareData = {
+        //         'url' : link
+        //     }
+        //     async (shareData) => {
+        //         try {
+        //             await navigator.share(shareData);
+        //         } catch (error) {
+        //             console.error(error);
+        //         }
+        //     };
+        // }
 
         const windowURL = window.location.href;
         const windowTitle = document.querySelector('meta[property="og:title"]').getAttribute('content');

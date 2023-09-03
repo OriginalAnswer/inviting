@@ -469,15 +469,25 @@ section{
 }
 
 .account:not(:last-child),
-.call:nth-child(1),
-.call:nth-child(4){
+.call-head{
     border-bottom: 1px solid var(--c-border-lightgray);
-    margin-bottom: 5px;
 }
-.call:nth-child(3),
-.call:nth-child(6){
-    margin-bottom: 10px;
+.call-head{
+    padding-bottom:1px;
 }
+.call:has(.account){
+    border-bottom: none;
+}
+.call-head span{
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1.1em;
+}
+.account:has(.bx){
+    border-bottom: none;
+}
+
 
 .account:last-child{
     padding-bottom: 0;
