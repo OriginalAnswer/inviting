@@ -99,14 +99,31 @@ section{
     animation-timing-function: 2s;
 }
 @keyframes musicNoti {
-    0%{width: 30px;}
-    75%{width: 155px;}
-    100%{width: 155px;}
-}
-@keyframes musicNotiOp {
-    0%{opacity: 0;}
-    50%{opacity: 1;}
-    100%{opacity: 1;}
+    0%{
+        background-color: var(--bgc-music-btn);
+        width: 30px;}
+    75%{
+        background-color: #fff;
+        width: 155px;}
+    100%{
+        background-color: #fff;
+        width: 155px;}
+    }
+    @keyframes musicNotiOp {
+        0%{opacity: 0;}
+        50%{opacity: 1;}
+        100%{opacity: 1;}
+    }
+@keyframes musicClick {
+    0%{
+        background-color: var(--bgc-music-btn);
+        width: 30px;}
+    75%{
+        background-color: #fff;
+        width: 155px;}
+    100%{
+        background-color: #fff;
+        width: 155px;}
 }
 /*  */
 .sc-head{
