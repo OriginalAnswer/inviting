@@ -94,7 +94,7 @@ section{
 .music-btn span{
     margin: 0 8px 0 0;
     flex-shrink: 0;
-    opacity: 0;
+    opacity: 1;
     animation: musicNotiOp 3s 1.5s alternate 2 ;
     animation-timing-function: 2s;
 }
@@ -114,17 +114,17 @@ section{
         50%{opacity: 1;}
         100%{opacity: 1;}
     }
-@keyframes musicClick {
+/* @keyframes musicClick {
     0%{
         background-color: var(--bgc-music-btn);
         width: 30px;}
     75%{
         background-color: #fff;
-        width: 155px;}
+        width: 60px;}
     100%{
         background-color: #fff;
-        width: 155px;}
-}
+        width: 60;}
+} */
 /*  */
 .sc-head{
     margin-top: 8em;
