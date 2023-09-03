@@ -497,7 +497,7 @@ section{
     padding: 5px 0;
 }
 .call{
-    justify-content: center;
+    justify-content: space-around;
 }
 .account > div{
     display: flex;
@@ -518,7 +518,7 @@ section{
     max-width: 45%;
 }
 .call .c{
-    max-width: 60%;
+    max-width: 50%;
 }
 .call .c div{
     font-size: 1.1em;

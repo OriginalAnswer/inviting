@@ -627,6 +627,7 @@ fadeElements.forEach((e) => observer.observe(e));
             try {
                 document.execCommand('copy');
             } catch (err) {
+                alert('복사실패');
                 console.error('복사 실패', err);
             }
             ta.setSelectionRange(0, 0);
@@ -650,6 +651,7 @@ fadeElements.forEach((e) => observer.observe(e));
             try {
                 document.execCommand('copy');
             } catch (err) {
+                alert('복사실패');
                 console.error('복사 실패', err);
             }
             ta.setSelectionRange(0, 0);
